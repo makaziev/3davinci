@@ -1,0 +1,16 @@
+#!/usr/bin/env php
+<?php
+
+use App\Boot;
+use App\Command\UserCommand;
+use Symfony\Component\Console\Application;
+
+require __DIR__ . '/vendor/autoload.php';
+
+
+Boot::init();
+$application = new Application();
+$application->addCommands([
+    new UserCommand()
+]);
+$application->run();
